@@ -52,7 +52,7 @@ Exemplos de Entrada  | Exemplos de Saída
 
 ```javascript
 //SOLUCAO 1
-//Atribuido as cedulas no array
+/*Atribuido as cedulas no array*/
 var notas = [100, 50, 20, 10, 5, 2, 1];
 /*Imprime no console o valor da primeira linha de entrada*/
 var valorPago = parseInt(gets());
