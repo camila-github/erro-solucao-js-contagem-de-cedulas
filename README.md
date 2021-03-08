@@ -1,7 +1,6 @@
-## Treinamento Digital Innovation One - Exercicio - Contagem De Cédulas
+## Exercicio - Contagem De Cédulas
 
-O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS - Fundamentos Aritméticos em JavaScript.
-(https://digitalinnovation.one)
+O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS - Fundamentos Aritméticos em JavaScript. (https://digitalinnovation.one)
 
 #### Descrição do Desafio:
 
@@ -51,7 +50,32 @@ Exemplos de Entrada  | Exemplos de Saída
 #### Javascript
 
 ```javascript
-//SOLUCAO 1
+
+//SOLUÇÃO 1 - Criado função e utilizado Reduce
+const cedulas = [100, 50, 20, 10, 5, 2, 1]; /*Atribuido as cedulas no array*/
+console.log(valorPago = parseInt(gets())); /*Imprime no console o valor da primeira linha de entrada*/
+contagemCedulas(cedulas, valorPago); /*Chama a função*/
+
+/*O valorPago será calculado com cada cedula do array*/
+function contagemCedulas(cedula, vPago) {
+    cedula.reduce(function(accValorPago, valorCedula) {
+        let div;
+        if (accValorPago >= valorCedula) {
+            /*divide o valorPago com cada cedula que tem no array.Concatena resultado com o texto padrão.
+            Adiciona dois digitos depois da virgula,no valor da cedula.*/
+            console.log((div = Math.floor(accValorPago / valorCedula)) + " nota(s) de R$ " + parseFloat(valorCedula).toFixed(2).replace(".", ","));
+            //multiplica o valor da divisão com o valor da cedula, e subtrae resultado com o valorPago.
+            return (accValorPago -= div * valorCedula);
+        } else {
+            //Se o valorPago nao for maior que o valor da cedula, imprime zero referente a cedula.
+            console.log((div = 0) + " nota(s) de R$ " + parseFloat(valorCedula).toFixed(2).replace(".", ","));
+            return accValorPago;
+        }
+    }, vPago); // o calculo inicial, utilizado no Reduce será o valorPago
+}
+
+
+//SOLUCAO 2
 /*Atribuido as cedulas no array*/
 var notas = [100, 50, 20, 10, 5, 2, 1];
 /*Imprime no console o valor da primeira linha de entrada*/
@@ -75,27 +99,5 @@ for (var x = 0; x < notas.length; x++) {
         mensagem = div + " nota(s) de R$ " + parseFloat(notas[x]).toFixed(2);
         console.log(mensagem.toString().replace(".", ","));
     }
-}
-
-
-//SOLUCAO 2 - Criado função e utilizado Reduce
-cedulas = [100, 50, 20, 10, 5, 2, 1]; /*Atribuido as cedulas no array*/
-console.log(valorPago = parseInt(gets())); /*Imprime no console o valor da primeira linha de entrada*/
-contagemCedulas(cedulas, valorPago); /*Chama a função*/
-
-/*O valorPago será calculado com cada cedula do array*/
-function contagemCedulas(cedula, vPago) {
-    cedula.reduce(function(accValorPago, valorCedula) {
-        if (accValorPago >= valorCedula) {
-            /*divide o valorPago com cada cedula que tem no array.Concatena resultado com o texto padrão.Adiciona dois digitos depois da virgula, no valor da cedula*/
-            console.log((div = Math.floor(accValorPago / valorCedula)) + " nota(s) de R$ " + parseFloat(valorCedula).toFixed(2).replace(".", ","));
-            /*multiplica o valor da divisão com o valor da cedula, e subtrae resultado com o valorPago*/
-            return (accValorPago -= div * valorCedula);
-        } else {
-            /*Se o valorPago nao for maior que o valor da cedula, imprime zero referente a cedula*/
-            console.log((div = 0) + " nota(s) de R$ " + parseFloat(valorCedula).toFixed(2).replace(".", ","));
-            return accValorPago;
-        }
-    }, vPago); /*o calculo inicial, utilizado no Reduce será o valorPago*/
 }
 ```
