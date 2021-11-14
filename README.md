@@ -1,6 +1,6 @@
 ## Exercicio - Contagem De Cédulas
 
-O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS - Fundamentos Aritméticos em JavaScript. (https://digitalinnovation.one)
+O exercicio publicado é referente ao treinamento do BOOTCAMP - Desenvolvedor NodeJS - Fundamentos Aritméticos em JavaScript. [https://digitalinnovation.one](https://digitalinnovation.one)
 
 #### Descrição do Desafio:
 
